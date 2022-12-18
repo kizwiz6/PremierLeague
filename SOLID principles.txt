@@ -1,0 +1,19 @@
+﻿Single Responsibility Principle:
+
+The application should have a single responsibility - to display information about Premiership football teams. This means that the application should not be responsible for any other tasks, such as calculating statistics or processing user input.
+
+Open/Closed Principle:
+
+The application should be open for extension, but closed for modification. This means that the application should allow new features to be added without changing the existing code. For example, you could add a new feature to display the standings of the Premiership without modifying the existing code that displays team information.
+
+Liskov Substitution Principle:
+
+The application should use inheritance and polymorphism to allow for flexibility and reuse of code. For example, you could create a base class "FootballTeam" with properties such as "Name" and "Stadium", and then create derived classes for specific Premiership teams, each with their own unique property values.
+
+Interface Segregation Principle:
+
+The application should use interfaces to provide specific functionality, rather than having a single monolithic interface with many unrelated methods. For example, you could create separate interfaces for "TeamInformation" and "Standings", rather than having a single interface with methods for both.
+
+Dependency Inversion Principle:
+
+The application should depend on abstractions, rather than concrete implementations. This means that the application should not depend on specific classes, but rather on interfaces or abstract base classes. This allows for greater flexibility and easier maintenance, as the concrete implementations can be changed without affecting the rest of the application.
