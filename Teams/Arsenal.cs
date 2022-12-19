@@ -12,13 +12,15 @@ namespace PremierLeague.Teams
     class Arsenal : FootballTeam, ITeamInformation, IStandings
     {
         public int Points { get; set; }
+        public List <Player> Players { get; set; }
+        List<IPlayer> ITeamInformation.Players { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         /// <summary>
         /// Constructor that sets the 'Name' and 'Stadium' properties inherited from the base class, and it implements the 'GetInformation' method from the interface.
         /// </summary>
         public Arsenal() : base("Arsenal", "Emirates Stadium")
         {
-
+            Players = new List<Player>();
         }
 
         /// <summary>
@@ -33,6 +35,16 @@ namespace PremierLeague.Teams
         public string GetStandings()
         {
             return $"{Name} have {Points} points in the Premiership.";
+        }
+
+        public void AddPlayer(IPlayer player)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RemovePlayer(IPlayer player)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -9,6 +9,8 @@ namespace PremierLeague.Teams
     class ManchesterUnited : FootballTeam, ITeamInformation, IStandings
     {
         public int Points { get; set; }
+        List<IPlayer> ITeamInformation.Players { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
         public ManchesterUnited() : base("Manchester United", "Old Trafford")
         {
         }
@@ -21,6 +23,16 @@ namespace PremierLeague.Teams
         public string GetStandings()
         {
             return $"{Name} have {Points} points in the Premiership.";
+        }
+
+        public void AddPlayer(IPlayer player)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RemovePlayer(IPlayer player)
+        {
+            throw new NotImplementedException();
         }
     }
 }
