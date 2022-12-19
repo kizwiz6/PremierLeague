@@ -47,6 +47,12 @@ internal class Program
         westHam.Points = 14;
         wolves.Points = 10;
 
+        // Players
+        Player kieranemery = new Player("Kieran Emery", "Forward", liverpool);
+        liverpool.AddPlayer(kieranemery);
+        Player mitchellAves = new Player("Mitchell Aves", "Goalkeeper", arsenal);
+        arsenal.AddPlayer(mitchellAves);
+
         Console.WriteLine("Team Information:");
 
         // Create a list of ITeamInformation objects
@@ -67,5 +73,10 @@ internal class Program
         // Create a StandingsDisplay object to show team standings
         var standingsDisplay = new StandingsDisplay(standings);
         standingsDisplay.ShowStandings();
+
+
+        Match match = new Match(arsenal, liverpool, 2, 1);
+        ITeamInformation winner = match.GetWinner();
+        Console.WriteLine("The winner of the match is: " + winner.Name);
     }
 }
