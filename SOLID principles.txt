@@ -1,19 +1,19 @@
-﻿Single Responsibility Principle:
+﻿Single Responsibility Principle: Each class should have a single responsibility, and that responsibility should be encapsulated within the class.
 
-The application should have a single responsibility - to display information about Premiership football teams. This means that the application should not be responsible for any other tasks, such as calculating statistics or processing user input.
+The application should have a single responsibility - to display information about Premiership football teams. This means that the application should not be responsible for any other tasks, such as calculating statistics or processing user input. For example, you might have a Team class that represents a Premier League team. This class should only be responsible for storing and manipulating data about the team, such as the team's name, stadium, and list of players.
 
-Open/Closed Principle:
+Open/Closed Principle: Classes should be open for extension, but closed for modification.
 
-The application should be open for extension, but closed for modification. This means that the application should allow new features to be added without changing the existing code. For example, you could add a new feature to display the standings of the Premiership without modifying the existing code that displays team information.
+The application should be open for extension, but closed for modification. This means that the application should allow new features to be added without changing the existing code. For example, you could add a new feature to display the standings of the Premiership without modifying the existing code that displays team information. An example, you might have a StandingsCalculator class that calculates the standings for a given Premier League season. You could extend this class to support different calculation methods (e.g. points-per-game, head-to-head record) without modifying the original class.
 
-Liskov Substitution Principle:
+Liskov Substitution Principle: Subtypes must be substitutable for their base types.
 
-The application should use inheritance and polymorphism to allow for flexibility and reuse of code. For example, you could create a base class "FootballTeam" with properties such as "Name" and "Stadium", and then create derived classes for specific Premiership teams, each with their own unique property values.
+The application should use inheritance and polymorphism to allow for flexibility and reuse of code. For example, you could create a base class "FootballTeam" with properties such as "Name" and "Stadium", and then create derived classes for specific Premiership teams, each with their own unique property values. Another example, you might have a base Player class that represents a generic soccer player, and derived classes for specific player positions (e.g. Goalkeeper, Defender, etc.). These derived classes should be able to be used interchangeably with the base class without causing any issues.
 
-Interface Segregation Principle:
+Interface Segregation Principle: Clients should not be forced to depend on interfaces they do not use.
 
-The application should use interfaces to provide specific functionality, rather than having a single monolithic interface with many unrelated methods. For example, you could create separate interfaces for "TeamInformation" and "Standings", rather than having a single interface with methods for both.
+The application should use interfaces to provide specific functionality, rather than having a single monolithic interface with many unrelated methods. For example, you could create separate interfaces for "TeamInformation" and "Standings", rather than having a single interface with methods for both. Another example, you might have an IPlayer interface that defines methods for retrieving player data (e.g. name, position, team). If you have a client that only needs to display player names, it should not be required to depend on the entire IPlayer interface, but rather just a smaller, more specific interface that only includes the GetName() method.
 
-Dependency Inversion Principle:
+Dependency Inversion Principle (DIP): High-level modules should not depend on low-level modules. Both should depend on abstractions.
 
-The application should depend on abstractions, rather than concrete implementations. This means that the application should not depend on specific classes, but rather on interfaces or abstract base classes. This allows for greater flexibility and easier maintenance, as the concrete implementations can be changed without affecting the rest of the application.
+The application should depend on abstractions, rather than concrete implementations. This means that the application should not depend on specific classes, but rather on interfaces or abstract base classes. This allows for greater flexibility and easier maintenance, as the concrete implementations can be changed without affecting the rest of the application. For example, you might have a Match class that represents a soccer match between two teams. Instead of directly depending on the Team class to get the teams involved in the match, the Match class should depend on an abstract ITeam interface. This allows the Match class to be more flexible, as it can work with any class that implements the ITeam interface.
